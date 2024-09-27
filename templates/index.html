@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цитата дня</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            flex: 1;
+        }
+        .quote {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            position: relative;
+        }
+        .author {
+            font-size: 1rem;
+            text-align: right;
+            margin-top: 1rem;
+            display: block;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header class="bg-dark text-white text-center py-3">
+    <h1>Цитата дня</h1>
+</header>
+
+<div class="container d-flex flex-column justify-content-center align-items-center">
+    <div class="quote">
+        <p>"{{ quote }}"</p>
+        <span class="author"><em>- {{ author }}</em></span>
+    </div>
+    <form action="{{ url_for('index') }}" method="post">
+        <button type="submit" class="btn btn-dark">Показать еще</button>
+
+    </form>
+</div>
+
+<footer>
+    Цитаты
+</footer>
+
+<!-- Подключение Bootstrap JS и зависимостей -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
